@@ -14,7 +14,7 @@
 
 (defun zilongshanren/octopress-rake (command)
   "run rake commands"
-  (let ((command-str (format "/bin/bash -l -c 'source $HOME/.rvm/scripts/rvm && rvm use ruby 2.0.0  && cd %s && rake %s'" octopress-workdir command)))
+  (let ((command-str (format "/bin/bash -l -c 'source $HOME/.rvm/scripts/rvm && rvm use ruby 2.3.0  && cd %s && rake %s'" octopress-workdir command)))
     (shell-command-to-string command-str)))
 
 (defun zilongshanren/octopress-qrsync (command)
@@ -49,27 +49,27 @@
 (defun zilongshanren/directory-parent (directory)
   (let ((parent (file-name-directory (directory-file-name directory))))
     (if (not (equal directory parent))
-        parent)))
+      parent)))
 
 (defun zilongshanren/jekyll-serve ()
   (interactive)
   (let* ((default-directory
-           (if (string-match "_posts/$" default-directory)
-               (zilongshanren/directory-parent (zilongshanren/directory-parent default-directory))
-             (zilongshanren/directory-parent default-directory)))
-         (buffer (if (get-buffer "*jekyll*")
-                     (switch-to-buffer "*jekyll*")
-                   (ansi-term "/bin/zsh" "jekyll")))
-         (proc (get-buffer-process buffer)))
-    (term-send-string proc "rake generate && rake preview\n")
-    (sit-for 4)
-    (browse-url "http://localhost:4000")))
+   (if (string-match "_posts/$" default-directory)
+     (zilongshanren/directory-parent (zilongshanren/directory-parent default-directory))
+     (zilongshanren/directory-parent default-directory)))
+  (buffer (if (get-buffer "*jekyll*")
+   (switch-to-buffer "*jekyll*")
+   (ansi-term "/bin/zsh" "jekyll")))
+  (proc (get-buffer-process buffer)))
+  (term-send-string proc "rake generate && rake preview\n")
+  (sit-for 4)
+  (browse-url "http://localhost:4000")))
 
 
 ;; Screenshot
 (defun zilongshanren//insert-org-or-md-img-link (prefix imagename)
   (if (equal (file-name-extension (buffer-file-name)) "org")
-      (insert (format "[[%s%s]]" prefix imagename))
+    (insert (format "[[%s%s]]" prefix imagename))
     (insert (format "![%s](%s%s)" imagename prefix imagename))))
 
 (defun zilongshanren/capture-screenshot (basename)
@@ -77,27 +77,27 @@
   same directory as the org-buffer/markdown-buffer and insert a link to this file."
   (interactive "sScreenshot name: ")
   (if (equal basename "")
-      (setq basename (format-time-string "%Y%m%d_%H%M%S")))
+    (setq basename (format-time-string "%Y%m%d_%H%M%S")))
   (setq fullpath
-        (concat (file-name-directory (buffer-file-name))
-                "../source/img/"
-                (file-name-base (buffer-file-name))
-                "_"
-                basename))
+    (concat (file-name-directory (buffer-file-name))
+      "../source/img/"
+      (file-name-base (buffer-file-name))
+      "_"
+      basename))
   (setq relativepath
-        (concat (file-name-base (buffer-file-name))
-                "_"
-                basename
-                ".png"))
+    (concat (file-name-base (buffer-file-name))
+      "_"
+      basename
+      ".png"))
   (if (file-exists-p (file-name-directory fullpath))
-      (progn
-        (setq final-image-full-path (concat fullpath ".png"))
-        (call-process "screencapture" nil nil nil "-s" final-image-full-path)
-        (if (executable-find "convert")
-            (progn
-              (setq resize-command-str (format "convert %s -resize 800x600 %s" final-image-full-path final-image-full-path))
-              (shell-command-to-string resize-command-str)))
-        (zilongshanren//insert-org-or-md-img-link "https://zilongshanren.com/img/" relativepath))
+    (progn
+      (setq final-image-full-path (concat fullpath ".png"))
+      (call-process "screencapture" nil nil nil "-s" final-image-full-path)
+      (if (executable-find "convert")
+        (progn
+          (setq resize-command-str (format "convert %s -resize 800x600 %s" final-image-full-path final-image-full-path))
+          (shell-command-to-string resize-command-str)))
+      (zilongshanren//insert-org-or-md-img-link "https://zilongshanren.com/img/" relativepath))
     (progn
       (call-process "screencapture" nil nil nil "-s" (concat basename ".png"))
       (zilongshanren//insert-org-or-md-img-link "./" (concat basename ".png"))))
@@ -116,9 +116,9 @@
   (save-excursion
     (end-of-line)
     (if (looking-back ";")
-        (progn
-          (backward-char)
-          (delete-char 1)))))
+      (progn
+        (backward-char)
+        (delete-char 1)))))
 
 (defun zilongshanren/insert-comma-at-the-end-of-this-line ()
   (interactive)
@@ -131,18 +131,18 @@
   (save-excursion
     (end-of-line)
     (if (looking-back ",")
-        (progn
-          (backward-char)
-          (delete-char 1)))))
+      (progn
+        (backward-char)
+        (delete-char 1)))))
 
 (defmacro zilongshanren|toggle-company-backends (backend)
   "Push or delete the backend to company-backends"
   (let ((funsymbol (intern (format "zilong/company-toggle-%S" backend))))
     `(defun ,funsymbol ()
-       (interactive)
-       (if (eq (car company-backends) ',backend)
-           (setq-local company-backends (delete ',backend company-backends))
-         (push ',backend company-backends)))))
+     (interactive)
+     (if (eq (car company-backends) ',backend)
+       (setq-local company-backends (delete ',backend company-backends))
+       (push ',backend company-backends)))))
 
 (defun zilongshanren/load-my-layout ()
   (interactive)
@@ -160,29 +160,29 @@
   (let (hist-cmd collection val)
     (shell-command "history -r") ; reload history
     (setq collection
-          (nreverse
-           (split-string (with-temp-buffer (insert-file-contents (file-truename "~/.bash_history"))
-                                           (buffer-string))
-                         "\n"
-                         t)))
+      (nreverse
+       (split-string (with-temp-buffer (insert-file-contents (file-truename "~/.bash_history"))
+         (buffer-string))
+       "\n"
+       t)))
     (when (and collection (> (length collection) 0)
-               (setq val (if (= 1 (length collection)) (car collection)
-                           (ivy-read (format "Bash history:") collection))))
-      (kill-new val)
-      (message "%s => kill-ring" val))))
+     (setq val (if (= 1 (length collection)) (car collection)
+       (ivy-read (format "Bash history:") collection))))
+    (kill-new val)
+    (message "%s => kill-ring" val))))
 
   ;; my fix for tab indent
-(defun zilongshanren/indent-region(numSpaces)
-  (progn
+  (defun zilongshanren/indent-region(numSpaces)
+    (progn
                                       ; default to start and end of current line
-    (setq regionStart (line-beginning-position))
-    (setq regionEnd (line-end-position))
+                                      (setq regionStart (line-beginning-position))
+                                      (setq regionEnd (line-end-position))
 
                                       ; if there's a selection, use that instead of the current line
-    (when (use-region-p)
-      (setq regionStart (region-beginning))
-      (setq regionEnd (region-end))
-      )
+                                      (when (use-region-p)
+                                        (setq regionStart (region-beginning))
+                                        (setq regionEnd (region-end))
+                                        )
 
     (save-excursion                          ; restore the position afterwards
       (goto-char regionStart)                ; go to the start of region
@@ -194,25 +194,25 @@
       (setq deactivate-mark nil)           ; restore the selected region
       )
     )
-  )
+    )
 
 
-(defun zilongshanren/tab-region (N)
-  (interactive "p")
-  (if (use-region-p)
+  (defun zilongshanren/tab-region (N)
+    (interactive "p")
+    (if (use-region-p)
       (zilongshanren/indent-region 4)               ; region was selected, call indent-region
     (insert "    ")                   ; else insert four spaces as expected
     ))
 
-(defun zilongshanren/untab-region (N)
-  (interactive "p")
-  (zilongshanren/indent-region -4))
+  (defun zilongshanren/untab-region (N)
+    (interactive "p")
+    (zilongshanren/indent-region -4))
 
-(defun zilongshanren/hack-tab-key ()
-  (interactive)
-  (local-set-key (kbd "<tab>") 'zilongshanren/tab-region)
-  (local-set-key (kbd "<S-tab>") 'zilongshanren/untab-region)
-  )
+  (defun zilongshanren/hack-tab-key ()
+    (interactive)
+    (local-set-key (kbd "<tab>") 'zilongshanren/tab-region)
+    (local-set-key (kbd "<S-tab>") 'zilongshanren/untab-region)
+    )
 
 ;; I'm don't like this settings too much.
 ;; (add-hook 'prog-mode-hook 'zilongshanren/hack-tab-key)
@@ -220,11 +220,11 @@
   "Like `fill-paragraph', but unfill if used twice."
   (interactive)
   (let ((fill-column
-         (if (eq last-command 'endless/fill-or-unfill)
-             (progn (setq this-command nil)
-                    (point-max))
-           fill-column)))
-    (call-interactively #'fill-paragraph)))
+   (if (eq last-command 'endless/fill-or-unfill)
+     (progn (setq this-command nil)
+      (point-max))
+     fill-column)))
+  (call-interactively #'fill-paragraph)))
 
 ;; http://blog.binchen.org/posts/new-git-timemachine-ui-based-on-ivy-mode.html
 (defun my-git-timemachine-show-selected-revision ()
@@ -232,15 +232,15 @@
   (interactive)
   (let (collection)
     (setq collection
-          (mapcar (lambda (rev)
+      (mapcar (lambda (rev)
                     ;; re-shape list for the ivy-read
                     (cons (concat (substring (nth 0 rev) 0 7) "|" (nth 5 rev) "|" (nth 6 rev)) rev))
-                  (git-timemachine--revisions)))
+      (git-timemachine--revisions)))
     (ivy-read "commits:"
-              collection
-              :action (lambda (rev)
-                        (progn (git-timemachine-show-revision rev)
-                               (evil-emacs-state))))))
+      collection
+      :action (lambda (rev)
+        (progn (git-timemachine-show-revision rev)
+         (evil-emacs-state))))))
 
 (defun my-git-timemachine ()
   "Open git snapshot with the selected version.  Based on ivy-mode."
