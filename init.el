@@ -89,7 +89,7 @@
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(rbenv)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(counsel-projectile
     magit-gh-pulls
@@ -513,10 +513,16 @@
   ;; (use-package powerline
   ;;   :config
   ;;   (powerline-center-evil-theme ))
-  (add-to-list 'load-path (expand-file-name "/.spacemacs.d/rbenv.el/"))
+  ;; (add-to-list 'load-path (expand-file-name "/.spacemacs.d/rbenv.el/"))
   (require 'rbenv)
   (global-rbenv-mode)
 
+  (defun eshell-mode-hook-func ()
+    (setq eshell-path-env (concat "/usr/local/bin:" eshell-path-env))
+    (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+    (define-key eshell-mode-map (kbd "M-s") 'other-window-or-split))
+
+  (add-hook 'eshell-mode-hook 'eshell-mode-hook-func)
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize))
   ;; rvm
@@ -526,6 +532,8 @@
   ;; (when (memq window-system '(mac ns))
     ;; (exec-path-from-shell-initialize))
   ;; (exec-path-from-shell-copy-env "/Users/ok/.rvm/gems/ruby-2.3.0/bin/")
+
+  ;; (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
   )
 
