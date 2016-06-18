@@ -49,7 +49,7 @@
      (syntax-checking :variables syntax-checking-enable-by-default nil)
      (spell-checking :variables spell-checking-enable-by-default nil)
      yaml
-     (ruby :variables ruby-version-manager 'rvm)
+     ;; (ruby :variables ruby-version-manager 'rvm)
      python
      lua
      html
@@ -513,8 +513,20 @@
   ;; (use-package powerline
   ;;   :config
   ;;   (powerline-center-evil-theme ))
+  (add-to-list 'load-path (expand-file-name "/.spacemacs.d/rbenv.el/"))
+  (require 'rbenv)
+  (global-rbenv-mode)
+
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize))
+  ;; rvm
+  ;; (require 'rvm)
+  ;; (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
+  ;; (require 'exec-path-from-shell)
+  ;; (when (memq window-system '(mac ns))
+    ;; (exec-path-from-shell-initialize))
+  ;; (exec-path-from-shell-copy-env "/Users/ok/.rvm/gems/ruby-2.3.0/bin/")
+
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
