@@ -534,7 +534,7 @@
   ;; (exec-path-from-shell-copy-env "/Users/ok/.rvm/gems/ruby-2.3.0/bin/")
 
   ;; (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
-
+  (require 'org-drill)
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
