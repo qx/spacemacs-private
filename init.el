@@ -62,31 +62,31 @@
      ;; command-log
      javascript
      (typescript :variables
-       typescript-fmt-on-save nil
-       typescript-fmt-tool 'typescript-formatter)
+                 typescript-fmt-on-save nil
+                 typescript-fmt-tool 'typescript-formatter)
      ;; restclient
      emacs-lisp
      (clojure :variables clojure-enable-fancify-symbols t)
      ranger
      ;; racket
      (spacemacs-layouts :variables layouts-enable-autosave nil
-      layouts-autosave-delay 300)
+                        layouts-autosave-delay 300)
      colors
      (git :variables
-      git-magit-status-fullscreen t
-      magit-push-always-verify nil
-      magit-save-repository-buffers 'dontask
-      magit-revert-buffers 'silent
-      magit-refs-show-commit-count 'all
-      magit-revision-show-gravatars nil)
+          git-magit-status-fullscreen t
+          magit-push-always-verify nil
+          magit-save-repository-buffers 'dontask
+          magit-revert-buffers 'silent
+          magit-refs-show-commit-count 'all
+          magit-revision-show-gravatars nil)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (c-c++ :variables
-      c-c++-default-mode-for-headers 'c++-mode)
+            c-c++-default-mode-for-headers 'c++-mode)
      (auto-completion :variables auto-completion-enable-sort-by-usage t
-      auto-completion-enable-help-tooltip t
-      :disabled-for org markdown)
+                      auto-completion-enable-help-tooltip t
+                      :disabled-for org markdown)
      (chinese :variables chinese-enable-youdao-dict t
-      chinese-enable-fcitx t)
+              chinese-enable-fcitx t)
      zilongshanren
      guanghui
      ruby-on-rails
@@ -98,29 +98,29 @@
    dotspacemacs-additional-packages '(rbenv)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(counsel-projectile
-    magit-gh-pulls
-    magit-gitflow
-    emmet-mode
-    evil-mc
-    pangu-spacing
-    holy-mode
-    skewer-mode
-    highlight-indentation
-    vi-tilde-fringe
-    open-junk-file
-    coffee-mode
-    evil-tutor
-    eyebrowse
-    hl-anything
-    org-bullets
-    smooth-scrolling
-    org-repo-todo
-    chinese-wbim
-    chinese-pyim
-    srefactor
-    org-download
-    org-timer
-    livid-mode
+                                    magit-gh-pulls
+                                    magit-gitflow
+                                    emmet-mode
+                                    evil-mc
+                                    pangu-spacing
+                                    holy-mode
+                                    skewer-mode
+                                    highlight-indentation
+                                    vi-tilde-fringe
+                                    open-junk-file
+                                    coffee-mode
+                                    evil-tutor
+                                    eyebrowse
+                                    hl-anything
+                                    org-bullets
+                                    smooth-scrolling
+                                    org-repo-todo
+                                    chinese-wbim
+                                    chinese-pyim
+                                    srefactor
+                                    org-download
+                                    org-timer
+                                    livid-mode
                                     ;; org-plus-contrib
                                     org-tree-slide
                                     git-gutter
@@ -230,10 +230,10 @@
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-     :size 13
-     :weight normal
-     :width normal
-     :powerline-scale 1.1)
+                               :size 13
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -379,9 +379,9 @@
   any user code here.  The exception is org related code, which should be placed
   in `dotspacemacs/user-config'."
   (setq configuration-layer--elpa-archives
-    '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-      ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-      ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
+        '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
+          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
   
   ;; https://github.com/syl20bnr/spacemacs/issues/2705
   ;; (setq tramp-mode nil)
@@ -417,7 +417,7 @@
     "\\" 'evil-repeat-find-char-reverse
     "[s" (lambda (n) (interactive "p") (dotimes (c n nil) (insert " ")))
     "]s" (lambda (n) (interactive "p")
-     (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
+           (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
 
   (bb/define-key company-active-map
     (kbd "C-w") 'evil-delete-backward-word)
@@ -429,7 +429,7 @@
   ;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
   ;; when editing js file, this feature is very useful
   (setq-default header-line-format
-    '((which-func-mode ("" which-func-format " "))))
+                '((which-func-mode ("" which-func-format " "))))
 
   ;; show smartparens mode will cause Emacs frozen when use swiper...
   ;; (turn-off-show-smartparens-mode)
@@ -440,7 +440,7 @@
   (defun spacemacs/check-large-file ()
     (when (> (buffer-size) 500000)
       (progn (fundamental-mode)
-       (hl-line-mode -1))))
+             (hl-line-mode -1))))
 
   (add-hook 'find-file-hook 'spacemacs/check-large-file)
   (spacemacs/toggle-automatic-symbol-highlight-on)
@@ -493,25 +493,25 @@
 
   (define-fringe-bitmap 'right-curly-arrow
     [#b00000000
-    #b00000000
-    #b00000000
-    #b00000000
-    #b01110000
-    #b00010000
-    #b00010000
-    #b00000000])
+     #b00000000
+     #b00000000
+     #b00000000
+     #b01110000
+     #b00010000
+     #b00010000
+     #b00000000])
   (define-fringe-bitmap 'left-curly-arrow
     [#b00000000
-    #b00001000
-    #b00001000
-    #b00001110
-    #b00000000
-    #b00000000
-    #b00000000
-    #b00000000])
+     #b00001000
+     #b00001000
+     #b00001110
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000])
   ;; tips:  use diminish-undo to toggle mode l
   (if (configuration-layer/layer-usedp 'helm)
-    (spacemacs/set-leader-keys "rh" 'helm-resume))
+      (spacemacs/set-leader-keys "rh" 'helm-resume))
   (when (configuration-layer/layer-usedp 'helm)
     (spacemacs/set-leader-keys "sj" 'counsel-imenu))
   (when (configuration-layer/layer-usedp 'ivy)
@@ -536,7 +536,7 @@
   ;; (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
   ;; (require 'exec-path-from-shell)
   ;; (when (memq window-system '(mac ns))
-    ;; (exec-path-from-shell-initialize))
+  ;; (exec-path-from-shell-initialize))
   ;; (exec-path-from-shell-copy-env "/Users/ok/.rvm/gems/ruby-2.3.0/bin/")
 
   ;; (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
