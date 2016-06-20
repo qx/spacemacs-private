@@ -31,6 +31,12 @@
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     (ruby :variables
+           ruby-enable-enh-ruby-mode t
+           ruby-version-manager 'rbenv
+           ruby-test-runner 'rspec
+           )
+     dash
      helm
      ivy
      ;; react
@@ -535,6 +541,7 @@
 
   ;; (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
+  (require 'org-drill)
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
