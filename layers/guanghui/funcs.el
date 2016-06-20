@@ -107,9 +107,11 @@
 ;; insert ; at the end of current line
 (defun zilongshanren/insert-semicolon-at-the-end-of-this-line ()
   (interactive)
-  (save-excursion
+  (progn
     (end-of-line)
-    (insert ";")))
+    (insert ";")
+    (newline)
+    (indent-for-tab-command)))
 
 (defun zilongshanren/delete-semicolon-at-the-end-of-this-line ()
   (interactive)
