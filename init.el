@@ -544,6 +544,22 @@
 
   (require 'org-drill)
   (global-set-key (kbd "s-1") 'indent-buffer)
+  ;; layout definition
+  (defun my-startup-layout ()
+    (interactive)
+    (delete-other-windows)
+    (split-window-horizontally) ;; -> |
+    (next-multiframe-window)
+    (find-file "~/.spacemacs.d/init.el")
+    (split-window-vertically) ;;  -> --
+    (next-multiframe-window)
+    (find-file "~/.spacemacs.d/custom.el")
+    (next-multiframe-window)
+    (dired "~")
+    )
+
+  ;; execute the layout
+  (my-startup-layout )
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))

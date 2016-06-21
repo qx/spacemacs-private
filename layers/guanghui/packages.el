@@ -67,10 +67,10 @@
 
       (spaceline-define-segment org-clock
         "Show information about the current org clock task.  Configure
-`spaceline-org-clock-format-function' to configure. Requires a currently running
-org clock.
+        `spaceline-org-clock-format-function' to configure. Requires a currently running
+        org clock.
 
-This segment overrides the modeline functionality of `org-mode-line-string'."
+        This segment overrides the modeline functionality of `org-mode-line-string'."
         (when (and (fboundp 'org-clocking-p)
                    (org-clocking-p))
           (substring-no-properties (funcall spaceline-org-clock-format-function)))
@@ -444,15 +444,15 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       ;; otherwise, use which-key + spacems + user defined key mappings in evil normal mode
       (defhydra hydra-yasnippet (:color blue :hint nil)
         "
-              ^YASnippets^
---------------------------------------------
-  Modes:    Load/Visit:    Actions:
+        ^YASnippets^
+        --------------------------------------------
+        Modes:    Load/Visit:    Actions:
 
- _g_lobal  _d_irectory    _i_nsert
- _m_inor   _f_ile         _t_ryout
- _e_xtra   _l_ist         _n_ew
-         _a_ll
-"
+        _g_lobal  _d_irectory    _i_nsert
+        _m_inor   _f_ile         _t_ryout
+        _e_xtra   _l_ist         _n_ew
+        _a_ll
+        "
         ("d" yas-load-directory)
         ("e" yas-activate-extra-mode)
         ("i" yas-insert-snippet)
@@ -576,12 +576,13 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
 
 (defun guanghui/post-init-persp-mode ()
   (when (fboundp 'spacemacs|define-custom-layout)
-    (spacemacs|define-custom-layout "@Cocos2D-X"
+    (spacemacs|define-custom-layout "settings"
       :binding "c"
       :body
-      (find-file "~/cocos2d-x/cocos/ui/UIWidget.cpp")
+      (find-file "~/.spacemacs.d/init.el")
       (split-window-right)
-      (find-file "~/cocos2d-x/cocos/cocos2d.cpp"))))
+      (dired "~/.spacemacs.d/.")
+      )))
 
 (defun guanghui/post-init-chinese-wbim ()
   (progn
@@ -787,8 +788,8 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
 
     (defun my-simple-todo ()
       "When in a project, create a `multi-occur' buffer matching the
-  regex in `my-simple-todo-regex' across all buffers in the
-  current project. Otherwise do `occur' in the current file."
+      regex in `my-simple-todo-regex' across all buffers in the
+      current project. Otherwise do `occur' in the current file."
       (interactive)
       (if (projectile-project-p)
           (multi-occur (projectile-project-buffers) my-simple-todo-regex)
@@ -857,14 +858,14 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
 
       (defvar zilongshanren-website-html-preamble
         "<div class='nav'>
-<ul>
-<li><a href='http://zilongshanren.com'>博客</a></li>
-<li><a href='/index.html'>Wiki目录</a></li>
-</ul>
-</div>")
+        <ul>
+        <li><a href='http://zilongshanren.com'>博客</a></li>
+        <li><a href='/index.html'>Wiki目录</a></li>
+        </ul>
+        </div>")
       (defvar zilongshanren-website-html-blog-head
         " <link rel='stylesheet' href='css/site.css' type='text/css'/> \n
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/worg.css\"/>")
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/worg.css\"/>")
       (setq org-publish-project-alist
             `(
               ("blog-notes"
@@ -954,8 +955,8 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
       ;; hack for org headline toc
       (defun org-html-headline (headline contents info)
         "Transcode a HEADLINE element from Org to HTML.
-CONTENTS holds the contents of the headline.  INFO is a plist
-holding contextual information."
+        CONTENTS holds the contents of the headline.  INFO is a plist
+        holding contextual information."
         (unless (org-element-property :footnote-section-p headline)
           (let* ((numberedp (org-export-numbered-headline-p headline info))
                  (numbers (org-export-get-headline-number headline info))
