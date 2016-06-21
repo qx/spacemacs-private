@@ -543,6 +543,7 @@
   ;; (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
   (require 'org-drill)
+  (global-set-key (kbd "s-1") 'indent-buffer)
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
