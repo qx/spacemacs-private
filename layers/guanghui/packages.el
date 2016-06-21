@@ -576,7 +576,7 @@
 
 (defun guanghui/post-init-persp-mode ()
   (when (fboundp 'spacemacs|define-custom-layout)
-    (spacemacs|define-custom-layout "settings"
+    (spacemacs|define-custom-layout "@settings"
       :binding "c"
       :body
       (find-file "~/.spacemacs.d/init.el")

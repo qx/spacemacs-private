@@ -550,13 +550,13 @@
     (delete-other-windows)
     (split-window-horizontally) ;; -> |
     (next-multiframe-window)
-    (find-file "~/.spacemacs.d/init.el")
+    (find-file "~/github/web/www/app/controllers/application_controller.rb")
     (split-window-vertically) ;;  -> --
     (next-multiframe-window)
-    (find-file "~/.spacemacs.d/custom.el")
+    (find-file "~/github/web/www/Gemfile")
     (next-multiframe-window)
-    (dired "~")
-    )
+    (dired "~/github/web/www/.")
+      )
 
   ;; execute the layout
   (my-startup-layout )
