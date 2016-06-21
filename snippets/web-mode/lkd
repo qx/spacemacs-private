@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: lkd
+# key: lkd
+# --
+<%= link_to $1 do %>
+  $0
+<% end %>
