@@ -31,6 +31,7 @@
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+
      (ruby :variables
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rbenv
@@ -70,6 +71,7 @@
      ranger
      ;; racket
      (spacemacs-layouts :variables layouts-enable-autosave nil
+                        spacemacs-layouts-directory "/Users/ok/.spacemacs.d/layouts/"
                         layouts-autosave-delay 300)
      colors
      (git :variables
@@ -560,6 +562,8 @@
 
   ;; execute the layout
   (my-startup-layout )
+  ;; search global
+  (global-set-key (kbd "s-f") 'helm-ag)
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
