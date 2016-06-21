@@ -20,6 +20,7 @@
  '(ctags-update-delay-seconds 1024)
  '(erc-nick "zilongshanren")
  '(erc-port 6666)
+ '(evil-escape-key-sequence "kj")
  '(evil-want-C-i-jump t)
  '(evil-want-Y-yank-to-eol t)
  '(exec-path-from-shell-arguments (quote ("-l")))
