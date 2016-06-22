@@ -567,5 +567,8 @@
   (global-set-key (kbd "s-f") 'helm-ag)
   )
 
+(setq mycus-file (expand-file-name "mycus.el" dotspacemacs-directory))
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
-(load custom-file 'no-error 'no-message)
+(load custom-file )
+(load mycus-file )
+;; (load custom-file 'no-error 'no-message)
