@@ -544,31 +544,9 @@
   ;; (exec-path-from-shell-copy-env "/Users/ok/.rvm/gems/ruby-2.3.0/bin/")
 
   ;; (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
-
-  (require 'org-drill)
-  (global-set-key (kbd "s-1") 'indent-buffer)
-  ;; layout definition
-  (defun my-startup-layout ()
-    (interactive)
-    (delete-other-windows)
-    (split-window-horizontally) ;; -> |
-    (next-multiframe-window)
-    (find-file "~/github/web/www/app/controllers/application_controller.rb")
-    (split-window-vertically) ;;  -> --
-    (next-multiframe-window)
-    (find-file "~/github/web/www/Gemfile")
-    (next-multiframe-window)
-    (dired "~/github/web/www/.")
-      )
-
-  ;; execute the layout
-  (my-startup-layout )
-  ;; search global
-  (global-set-key (kbd "s-f") 'helm-ag)
+  (load-file "~/.spacemacs.d/mycus.el")
   )
 
-(setq mycus-file (expand-file-name "mycus.el" dotspacemacs-directory))
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file )
-(load mycus-file )
 ;; (load custom-file 'no-error 'no-message)

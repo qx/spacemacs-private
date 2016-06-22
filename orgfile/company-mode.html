@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-06-22 Wed 14:58 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="ok" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<p>
+company-mode
+</p>
+
+<p>
+Modular in-buffer completion framework for Emacs
+模块化的 buffer Emacs 自动完成框架.
+View on GitHub
+About
+Company is a text completion framework for Emacs. The name stands for "complete anything". It uses pluggable back-ends and front-ends to retrieve and display completion candidates.
+comany 是一个 emacs 文本自动完成框架.名字的意思是'complete anything'.他使用前后端检索来显示可选完成项.
+It comes with several back-ends such as Elisp, Clang, Semantic, Eclim, Ropemacs, Ispell, CMake, BBDB, Yasnippet, dabbrev, etags, gtags, files, keywords and a few others.
+他附带几个后端,例如&#x2026;&#x2026;还有小部分其他的
+The CAPF  back-ends provides a bridge to the standard completion-at-point-functions facility, and thus works with any major mode that defines a proper completion function.
+CAPF 为标准的完成方法提供一个桥,因此可以工作在任何定义了合适完成方法的 major mode 提
+Screenshots
+ company-elisp  company-semantic
+</p>
+
+
+<p>
+Installation
+This package is part of GNU ELPA (M-x list-packages).
+这个包是在 GNUELPA 库里
+</p>
+
+<p>
+Advanced users can also download the development snapshot.
+高级用户可以下载开发版
+</p>
+
+<p>
+Usage
+Once installed, enable company-mode with M-x company-mode.
+安装好后,执行 M-x company-mode
+</p>
+
+<p>
+Completion will start automatically after you type a few letters. Use M-n and M-p to select, &lt;return&gt; to complete or &lt;tab&gt; to complete the common part. Search through the completions with C-s, C-r and C-o. Press M-(digit) to quickly complete with one of the first 10 candidates.
+自动完成在你输入几个字母后会自动开始,使用 M-n 和 M-p 选择,回车会完成或者 tab 会完成通用部分.通过 C-s,C-r,C-o 查找完成项,使用 M-数字,快速选择前 10 个可选项
+</p>
+
+
+<p>
+Type M-x company-complete to initiate completion manually. Bind this command to a key combination of your choice.
+输入 M-x company-complete 来手动初始化,绑定这个命令到一个你喜欢的按键
+</p>
+
+<p>
+When the completion candidates are shown, press &lt;f1&gt; to display the documentation for the selected candidate, or C-w to see its source. Not all back-ends support this.
+当完成可选项显示的时候 F1 显示文档,C-w 查看源代码.但不是说有的后端都支持这个功能
+</p>
+
+<p>
+To use company-mode in all buffers, add the following line to your init file:
+如果要全局使用,可以添加如下脚本到 init 文件
+</p>
+
+<p>
+(add-hook 'after-init-hook 'global-company-mode)
+</p>
+
+<p>
+To see or change the list of enabled back-ends, type M-x customize-variable RET company-backends. Also see its description for information on writing a back-end.
+想要查看已经开启的后端,输入 M-x customize-variable 回车 compayn-backends.也可以在查看描述文件关于 back-end 的部分
+For information on specific back-ends, also check out the comments inside the respective files.
+为了得到特定的 back-ends,你也可以检出各自的注释文件
+</p>
+
+<p>
+For more information, type M-x describe-function RET company-mode.
+如果要得到更多信息,输入 M-x describe-function 回车 company-mode
+</p>
+
+<p>
+To customize other aspects of its behavior, type M-x customize-group RET company.
+为了自定义其它的行为,输入 M-x customize-group 回车 company
+</p>
+
+<p>
+See Also
+Latest Changes
+Third-Party Packages
+Writing backends
+Feedback
+If you experience any problems or have a feature request, please use the issue tracker.
+</p>
+
+<p>
+Contributing
+Company is subject to the same copyright assignment policy as Emacs itself, org-mode, CEDET and other packages in GNU ELPA. Any legally significant contributions can only be accepted after the author has completed their paperwork. Please ask for the request form, and we'll send it to you.
+</p>
+
+<p>
+More Reading
+EmacsWiki page
+Company vs Auto-Complete
+C/C++ Development Environment for Emacs
+C# autocompletion in Emacs
+Configuring Emacs for Rails
+Writing Go in Emacs
+Emacs as My &lt;Leader&gt;: Vim Survival Guide
+Getting Objective-C code completion
+This page was generated by GitHub Pages. Tactile theme by Jason Long.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: ok</p>
+<p class="date">Created: 2016-06-22 Wed 14:58</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
