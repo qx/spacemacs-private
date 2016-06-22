@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: bs3-row
+# key: bs3-row
+# --
+<div class="row">
+$1
+</div>

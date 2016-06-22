@@ -98,13 +98,15 @@
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(rbenv
+                                      ac-html
+                                      ac-html-bootstrap
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
                                     ;; counsel-projectile
                                     ;; magit-gh-pulls
                                     ;; magit-gitflow
-                                    ;; emmet-mode
+                                    emmet-mode
                                     ;; evil-mc
                                     ;; pangu-spacing
                                     ;; holy-mode
