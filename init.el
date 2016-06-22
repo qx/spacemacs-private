@@ -100,35 +100,36 @@
    dotspacemacs-additional-packages '(rbenv
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(counsel-projectile
-                                    magit-gh-pulls
-                                    magit-gitflow
-                                    emmet-mode
-                                    evil-mc
-                                    pangu-spacing
-                                    holy-mode
-                                    skewer-mode
-                                    highlight-indentation
-                                    vi-tilde-fringe
-                                    open-junk-file
-                                    coffee-mode
-                                    evil-tutor
-                                    eyebrowse
-                                    hl-anything
-                                    org-bullets
-                                    smooth-scrolling
-                                    org-repo-todo
+   dotspacemacs-excluded-packages '(
+                                    ;; counsel-projectile
+                                    ;; magit-gh-pulls
+                                    ;; magit-gitflow
+                                    ;; emmet-mode
+                                    ;; evil-mc
+                                    ;; pangu-spacing
+                                    ;; holy-mode
+                                    ;; skewer-mode
+                                    ;; highlight-indentation
+                                    ;; vi-tilde-fringe
+                                    ;; open-junk-file
+                                    ;; coffee-mode
+                                    ;; evil-tutor
+                                    ;; eyebrowse
+                                    ;; hl-anything
+                                    ;; org-bullets
+                                    ;; smooth-scrolling
+                                    ;; org-repo-todo
                                     chinese-wbim
                                     chinese-pyim
-                                    srefactor
-                                    org-download
-                                    org-timer
-                                    livid-mode
+                                    ;; srefactor
+                                    ;; org-download
+                                    ;; org-timer
+                                    ;; livid-mode
                                     ;; org-plus-contrib
-                                    org-tree-slide
-                                    git-gutter
-                                    git-gutter-fringe
-                                    alert
+                                    ;; org-tree-slide
+                                    ;; git-gutter
+                                    ;; git-gutter-fringe
+                                    ;; alert
                                     ;; disable it for lispy-mode
                                     ;;https://github.com/abo-abo/lispy/issues/137
                                     ;; evil-escape
@@ -137,40 +138,40 @@
                                     ;; clj-refactor
                                     ;;remove from spacemacs distribution
                                     ;; neotree
-                                    leuven-theme
-                                    gh-md
-                                    evil-lisp-state
-                                    spray
-                                    doc-view
-                                    lorem-ipsum
-                                    ac-ispell
-                                    ace-jump-mode
-                                    ace-pinyin
-                                    find-by-pinyin-dired
-                                    auto-complete
-                                    auto-dictionary
-                                    clang-format
-                                    define-word
-                                    disaster
-                                    epic
-                                    fancy-battery
-                                    neotree
-                                    org-present
-                                    orgit
-                                    orglue
-                                    spacemacs-theme
-                                    spinner
-                                    tagedit
-                                    helm-flyspell
-                                    flyspell-correct-helm
-                                    helm-c-yasnippet
-                                    helm-pydoc
-                                    ace-jump-helm-line
-                                    helm-make
-                                    helm-projectile
-                                    helm-themes
-                                    helm-swoop
-                                    helm-mode-manager
+                                    ;; leuven-theme
+                                    ;; gh-md
+                                    ;; evil-lisp-state
+                                    ;; spray
+                                    ;; doc-view
+                                    ;; lorem-ipsum
+                                    ;; ac-ispell
+                                    ;; ace-jump-mode
+                                    ;; ace-pinyin
+                                    ;; find-by-pinyin-dired
+                                    ;; auto-complete
+                                    ;; auto-dictionary
+                                    ;; clang-format
+                                    ;; define-word
+                                    ;; disaster
+                                    ;; epic
+                                    ;; fancy-battery
+                                    ;; neotree
+                                    ;; org-present
+                                    ;; orgit
+                                    ;; orglue
+                                    ;; spacemacs-theme
+                                    ;; spinner
+                                    ;; tagedit
+                                    ;; helm-flyspell
+                                    ;; flyspell-correct-helm
+                                    ;; helm-c-yasnippet
+                                    ;; helm-pydoc
+                                    ;; ace-jump-helm-line
+                                    ;; helm-make
+                                    ;; helm-projectile
+                                    ;; helm-themes
+                                    ;; helm-swoop
+                                    ;; helm-mode-manager
                                     )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
